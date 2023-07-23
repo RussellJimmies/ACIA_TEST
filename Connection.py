@@ -6,8 +6,13 @@ import psycopg2.extras
 class Connection:
     def __init__(self):
         load_dotenv()  
-        DB_HOST = os.getenv('DB_HOST')  
-        DB_NAME = os.getenv('DB_NAME')  
-        DB_USER = os.getenv('DB_USER')  
-        DB_PW = os.getenv('DB_PW')  
-        self.connection = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PW, host=DB_HOST)
+        self.DB_HOST = os.getenv('DB_HOST')  
+        self.DB_NAME = os.getenv('DB_NAME')  
+        self.DB_USER = os.getenv('DB_USER')  
+        self.DB_PW = os.getenv('DB_PW')  
+        self.DB_VIEW_NAME = os.getenv('DB_VIEW_NAME')  
+        self.DB_VIEW_SCHEMA = os.getenv('DB_VIEW_SCHEMA')  
+        self.connection = psycopg2.connect(dbname=self.DB_NAME, user=self.DB_USER, password=self.DB_PW, host=self.DB_HOST)
+
+    def close_connection(self):
+        self.connection.close()
