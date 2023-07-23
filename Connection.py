@@ -1,7 +1,6 @@
 from dotenv import load_dotenv
 import os
 import psycopg2
-import psycopg2.extras
 
 class Connection:
     def __init__(self):
