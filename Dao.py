@@ -14,7 +14,6 @@ class Dao:
                                 FROM "{connection.DB_VIEW_SCHEMA}"."{connection.DB_VIEW_NAME}"
                                 LIMIT {topN}
                                 """)
-                #print(self.cur.fetchall())
                 resp = jsonify(self.cur.fetchall())
 
             else:
