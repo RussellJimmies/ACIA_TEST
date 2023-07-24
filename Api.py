@@ -25,7 +25,18 @@ class Api:
             """
         
         @self.app.route('/topN/<string:topN>', methods=['GET'])
-        def get_topN(topN):
+
+        
+        def get_topN(topN: int):
+            """
+                Retourne un document JSON des topN documents de la table crawl, selon leur score (décroissant).
+
+                Paramètres :
+                    topN (int) : Le nombre d'éléments à récupérer depuis la base de données.
+
+                Retour :
+                    json : Les données récupérées au format JSON.
+            """
             json = None
             try:
                 self.connection = Connection()
