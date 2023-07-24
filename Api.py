@@ -15,12 +15,12 @@ class Api:
         def home():
             return f"""
             <pre>
-            Welcome to my API!
+            Bienvenue à mon API!
 
             <u>Endpoints:</u> 
 
             <b>/topN/int from 1 - 100</b>
-            Returns json of topN documents from the crawl table, sorted by score (descending)
+            Retourne un document JSON des topN documents de la table crawl, selon leur score (décroissant).
             </pre>
             """
         
@@ -39,4 +39,4 @@ class Api:
 
 if __name__ == '__main__':
     api = Api()
-    api.app.run(debug=True)
+    api.app.run()
